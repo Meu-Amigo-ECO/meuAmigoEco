@@ -14,4 +14,5 @@ A ideia do nosso projeto é criar um aplicativo Android para o público infantoj
 - Cada uma dessas atividades terão uma quantia de XP (experiência), sendo atividades que darão mais XP, como por exemplo plantar uma árvore;
 - Com uma certa quantia de XP terá a evolução de nível, com isso nós tornamos uma certa competitividade entre as crianças de forma saudável, estimulando as atividades através desse elemento;
 - Terão sessões de "Quiz" com perguntas sobre sustentabilidade que também darão XP, isso estimula a curiosidade da criança para assunstos que, por ventura, ainda não conheça, como por exemplo as cores de latões de coleta de reciclagem;
+- Terão conteúdos que no fim de sua leitura haverá um botão que ao ser acionado recompesará com XP, estimulando leituras sobre os temas sustentáveis;
 - Serão X quantia de atividades por semana, sendo renovadas por novas e/ou mesmas assim por diante.
