@@ -6,7 +6,7 @@
 
 <h3>Ideia</h3>
 
-A ideia do nosso projeto é criar um aplicativo Android para o público infantojuvenil (13 - 16 anos) com foco em vários objetivos da ODS (Objetivos De Desenvolvimento Sustentável). Eco será um personagem que irá guiar o usuário para tornar o mundo um lugar sustentável, saudável e feliz 😄.
+A ideia do nosso projeto é criar um aplicativo Android para o público infantil com foco em vários objetivos da ODS (Objetivos De Desenvolvimento Sustentável). Eco será um personagem que irá guiar o usuário para tornar o mundo um lugar sustentável, saudável e feliz 😄.
 
 <h3>Objetivos</h3>
 
