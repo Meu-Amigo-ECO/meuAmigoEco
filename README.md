@@ -23,11 +23,25 @@ A ideia do nosso projeto é criar um **aplicativo Android e um Website para o p�
 - Terão conteúdos que no fim de sua leitura haverá um botão que ao ser acionado recompensará com XP, estimulando leituras sobre os temas sustentáveis;
 - Serão X quantia de atividades por semana, sendo renovadas por novas e/ou mesmas assim por diante.
 
+<h3>Nosso Diferencial</h3>
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Não temos parâmetros de ideias parecidas a nossa, com isso acreditamos estar inovando trazendo um aplicativo com ideias de gameficação para o âmbito ambiental e sustentável;
+
+- Será um aplicativo totalmente gratuito, o que torna mais acessível;
+
+- Pode ser usado por escolas ou ONGS como forma didática.
+
+
 <h3>Wireframe da Arquitetura Mobile</h3>
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ![arquitetura-mobile](https://user-images.githubusercontent.com/63882166/168190421-1f7adcb8-0e81-4f86-a112-eed6270bb580.png)
+
+
+**copyright Equipe ECO (©). Todos os direitos reservados. Contato: equipe-eco@outlook.com**
 
 
 
