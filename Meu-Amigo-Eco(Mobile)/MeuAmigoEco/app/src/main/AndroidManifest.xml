@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuAmigoEco">
         <activity
+            android:name=".PontuacaoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuestaoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SetsActivity"
+            android:exported="false" />
+        <activity
             android:name=".CategoriaActivity"
             android:exported="false" />
         <activity

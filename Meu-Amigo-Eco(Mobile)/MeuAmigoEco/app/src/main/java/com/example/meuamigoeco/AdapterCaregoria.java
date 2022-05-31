@@ -1,5 +1,6 @@
 package com.example.meuamigoeco;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,15 @@ public class AdapterCaregoria extends BaseAdapter {
         else {
             view = convertView;
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(parent.getContext(),SetsActivity.class);
+                intent.putExtra("CATEGORIA", catArrayList.get(position));
+                parent.getContext().startActivity(intent);
+            }
+        });
 
         ((TextView) view.findViewById(R.id.catNome)).setText(catArrayList.get(position));
 
