@@ -1,0 +1,128 @@
+// cores
+// #009245
+// #3AF08F
+// #3FD987
+// #3AF08F
+// #37E688
+
+*{
+  margin: 0;
+  padding:0;
+  color: black;
+
+  font-family: 'Roboto','Inconsolata', monospace;
+}
+
+html{
+  background-color:rgb(243, 242, 239);
+    // background-image: linear-gradient(#fff,#00ff779c);
+}
+
+h2{
+  margin-bottom:30px;
+}
+
+h3{
+color:#2db16b ;
+  margin: 3px 0 0px;
+}
+
+.container-template{
+  background-color: rgb(255, 255, 255);
+
+
+  box-shadow: 0 0 5px 1px rgb(216, 214, 214);
+  border-radius: 5px;
+  margin:10px;
+  padding: 20px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.container-size{
+  width: 900px;
+  height: fit-content;
+}
+
+.card-size{
+  width: 300px;
+  height: fit-content;
+}
+
+.button{
+  font-family: 'Inconsolata', monospace;
+  border: none;
+  border-radius: 7px;
+
+  background-color: #3FD987;
+  color: #fff;
+
+  p{
+    color: #fff;
+  }
+
+  &:hover{
+    background-color:  #009245;
+
+
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+}
+
+.default-button-size{
+  display: flex;
+  padding:10px 20px;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  font-family: "Inconsolata", monospace;
+  p{
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+  }
+}
+
+
+.big-button{
+  width: 300px;
+  height: 60px;
+  font-size: 30px;
+}
+
+.default-button-with-icon{
+  p{
+    padding: 2px 0 0 0;
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
+  }
+  i{
+    padding: 0 0 0 8px;
+    font-size:20px;
+    color: white;
+  }
+}
+
+.big-button-with-icon{
+  p{
+
+  }
+
+  i{
+
+  }
+}
+
+.button-disable{
+  background-color: #2e9e62e3;
+  color: rgba(247, 247, 247, 0.897);
+
+  &:hover{
+    cursor: not-allowed;
+    background-color: #2e9e62e3;
+    color: rgba(247, 247, 247, 0.897);
+  }
+}

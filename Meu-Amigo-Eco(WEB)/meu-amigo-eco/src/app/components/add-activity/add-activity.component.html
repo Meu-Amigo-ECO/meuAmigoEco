@@ -1,11 +1,47 @@
 <div class="container-template container-size">
   <h2>Adicione uma atividade realizada!</h2>
-  <textarea
-    placeholder="{{ placeholder_text }}"
-    (mouseenter)="onPlaceholderHover()"
-    (mouseleave)="onPlaceholderHover()"
-  ></textarea>
-  <div class="recent-activities">
-    <a> Atividades recentes \/ </a>
-  </div>
+
+  <form (ngSubmit)="onSubmit()">
+    <input class="input-style" [(ngModel)]="activity.title" type="text" name="title" placeholder="Titulo" />
+    <textarea class="input-style" placeholder="Descrição da atividade" [(ngModel)]="activity.description"
+      name="description">
+    </textarea>
+    <div class="buttons-container">
+      <div class="recent-activities-container">
+        <div class="recent-activities-button" *ngIf="activities.length > 0; else noActivities"
+          (click)="onActiviesButton()">
+          <p>Atividades recentes</p>
+          <i [ngClass]="isActiviesHistoricOpen ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+        </div>
+        <ng-template #noActivities>
+          <div class="recent-activities-button no-activities">
+            não há atividades para listar
+          </div>
+        </ng-template>
+        <ul class="recent-activies-historic" *ngFor="let item of activities">
+          <li *ngIf="isActiviesHistoricOpen === true && activities.length > 0">
+            <div class="activity-description">
+              <div class="description-container">
+                <div class="activity-description-header">
+                  <h4>{{ item.title }}</h4>
+                  <div class="delete-activity" (click)="deleteActivity($event, item)">
+                    <i class="bi bi-trash"></i>
+                  </div>
+                </div>
+                <p>{{ item.description }}</p>
+              </div>
+              <div class="time">
+                <p>{{ item.created }}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button class="button default-button-size" type="submit" [ngClass]="{
+          'button-disable': activity.title === '' || activity.description === ''
+        }">
+        ADICIONAR
+      </button>
+    </div>
+  </form>
 </div>
