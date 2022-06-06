@@ -2,7 +2,7 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-![MeuAmigoECO](https://user-images.githubusercontent.com/63882166/168189727-4f3ffa6a-ff2e-4d45-a91e-597199c277a6.png)
+![unknown232](https://user-images.githubusercontent.com/63882166/172266723-dc43097f-bea6-4840-bd60-9438cb00e917.png)
 
 <h3>Ideia do Projeto</h3>
 
