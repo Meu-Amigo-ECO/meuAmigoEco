@@ -1,8 +1,12 @@
 package com.example.meuamigoeco;
 
+import static com.example.meuamigoeco.SetsActivity.idCategoria;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.Animator;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -10,9 +14,18 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import org.w3c.dom.Text;
 
@@ -25,6 +38,10 @@ public class QuestaoActivity extends AppCompatActivity implements View.OnClickLi
     private List<Questao> listaQuestoes;
     private int numeroQuestao;
     private CountDownTimer countDown;
+    private int pontuacao;
+    private FirebaseFirestore firestore;
+    private int numSet;
+    private Dialog carregando;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,18 +63,50 @@ public class QuestaoActivity extends AppCompatActivity implements View.OnClickLi
         questaoTres.setOnClickListener(this);
         questaoQuatro.setOnClickListener(this);
 
+        carregando = new Dialog(QuestaoActivity.this);
+        carregando.setContentView(R.layout.barra_progresso_carregamento);
+        carregando.setCancelable(false);
+        carregando.getWindow().setBackgroundDrawableResource(R.drawable.background_progresso);
+        carregando.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        carregando.show();
+
+        numSet = getIntent().getIntExtra("SETNUMB", 1);
+        firestore = FirebaseFirestore.getInstance();
+
         getQuestaosList();
+
+        pontuacao = 0;
     }
 
     private void getQuestaosList(){
         listaQuestoes = new ArrayList<>();
-        listaQuestoes.add(new Questao("Questão Um", "A", "B", "C", "D", 2));
-        listaQuestoes.add(new Questao("Questão Dois", "B", "B", "D", "A", 2));
-        listaQuestoes.add(new Questao("Questão Três", "C", "B", "A", "D", 2));
-        listaQuestoes.add(new Questao("Questão Quatro", "A", "D", "C", "B", 2));
-        listaQuestoes.add(new Questao("Questão Cinco", "C", "D", "A", "D", 2));
 
-        setQuestao();
+        firestore.collection("MeuAmigoEco").document("Categoria" +
+                String.valueOf(idCategoria)).collection("SET" + String.valueOf(numSet))
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    QuerySnapshot questoes = task.getResult();
+
+                    for (QueryDocumentSnapshot doc : questoes){
+                        listaQuestoes.add(new Questao(doc.getString("Questao"),
+                                doc.getString("A"),
+                                doc.getString("B"),
+                                doc.getString("C"),
+                                doc.getString("D"),
+                                Integer.valueOf(doc.getString("Resposta"))
+                        ));
+                    }
+                    setQuestao();
+                }
+                else {
+                    Toast.makeText(QuestaoActivity.this, task.getException().getMessage(),
+                            Toast.LENGTH_SHORT).show();
+                }
+                carregando.cancel();
+            }
+        });
     }
 
     private void setQuestao(){
@@ -121,6 +170,7 @@ public class QuestaoActivity extends AppCompatActivity implements View.OnClickLi
         if (opcaoSelecionada == listaQuestoes.get(numeroQuestao).getQuestaoCorreta()){
             // questão coreta
             ((Button)v).setBackgroundTintList(ColorStateList.valueOf(Color.GREEN));
+            pontuacao++;
         }
         else {
             // Questão incorreta
@@ -165,12 +215,13 @@ public class QuestaoActivity extends AppCompatActivity implements View.OnClickLi
         } else {
             // Vá para a Activity de pontuação
             Intent intent = new Intent(QuestaoActivity.this, PontuacaoActivity.class);
+            intent.putExtra("PONTUAÇÃO", String.valueOf(pontuacao) + "/" + String.valueOf(listaQuestoes.size()));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
-            QuestaoActivity.this.finish();
         }
     }
 
-    private void playAnim(View v, final int value, int numeroView){
+    private void playAnim(View v, final int value, int numeroView) {
         v.animate().alpha(value)
                 .scaleX(value).setDuration(500)
                 .setDuration(100)
@@ -184,26 +235,26 @@ public class QuestaoActivity extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         if (value == 0) {
-                            switch (numeroView){
+                            switch (numeroView) {
                                 case 0:
-                                    ((TextView)v).setText(listaQuestoes.get(numeroQuestao).getQuestao());
+                                    ((TextView) v).setText(listaQuestoes.get(numeroQuestao).getQuestao());
                                     break;
                                 case 1:
-                                    ((Button)v).setText(listaQuestoes.get(numeroQuestao).getOpcaoA());
+                                    ((Button) v).setText(listaQuestoes.get(numeroQuestao).getOpcaoA());
                                     break;
                                 case 2:
-                                    ((Button)v).setText(listaQuestoes.get(numeroQuestao).getOpcaoB());
+                                    ((Button) v).setText(listaQuestoes.get(numeroQuestao).getOpcaoB());
                                     break;
                                 case 3:
-                                    ((Button)v).setText(listaQuestoes.get(numeroQuestao).getOpcaoC());
+                                    ((Button) v).setText(listaQuestoes.get(numeroQuestao).getOpcaoC());
                                     break;
                                 case 4:
-                                    ((Button)v).setText(listaQuestoes.get(numeroQuestao).getOpcaoD());
+                                    ((Button) v).setText(listaQuestoes.get(numeroQuestao).getOpcaoD());
                                     break;
                             }
 
                             if (numeroView != 0)
-                                ((Button)v).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#5b92e5")));
+                                ((Button) v).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#5b92e5")));
 
                             playAnim(v, 1, numeroView);
                         }
@@ -220,5 +271,12 @@ public class QuestaoActivity extends AppCompatActivity implements View.OnClickLi
                     }
                 });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        countDown.cancel();
     }
 }

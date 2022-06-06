@@ -44,6 +44,7 @@ public class SetsAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(parent.getContext(), QuestaoActivity.class);
+                intent.putExtra("SETNUMB", position + 1);
                 parent.getContext().startActivity(intent);
             }
         });

@@ -3,15 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/drawable/background_progresso.xml" value="0.1" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/drawable/borda_categoria.xml" value="0.1" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/drawable/gradient_background.xml" value="0.1" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/drawable/round_button_corner.xml" value="0.1" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/drawable/round_site_button_corner.xml" value="0.131" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/activity_categoria.xml" value="0.15" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/activity_pontuacao.xml" value="0.35648148148148145" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/activity_questao.xml" value="0.22" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/activity_sets.xml" value="0.25" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
+        <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/barra_progresso_carregamento.xml" value="0.15" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/grid_cat_item_layout.xml" value="0.1" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/layout/set_item_layout.xml" value="0.1" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/MeuAmigoEco/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1305" />

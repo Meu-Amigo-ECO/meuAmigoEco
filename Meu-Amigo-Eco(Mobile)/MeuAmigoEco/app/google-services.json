@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "433159438906",
+    "project_id": "meu-amigo-eco-quiz",
+    "storage_bucket": "meu-amigo-eco-quiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433159438906:android:169c136c8e024060eceb03",
+        "android_client_info": {
+          "package_name": "com.example.meuamigoeco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433159438906-09g44fbep3lo90a91al7s67d7b8kphi7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.meuamigoeco",
+            "certificate_hash": "4949ea5604fcda7f74b17e58372ad7425afeefba"
+          }
+        },
+        {
+          "client_id": "433159438906-0icmfgdmnncm2ak6leemenj7079s18ff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy4osLNKgrCTMOQMbYOQu819ntPp2GkyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433159438906-0icmfgdmnncm2ak6leemenj7079s18ff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

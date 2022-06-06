@@ -1,5 +1,7 @@
 package com.example.meuamigoeco;
 
+import static com.example.meuamigoeco.SplashScreenActivity.listaCategorias;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -7,9 +9,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.GridView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CategoriaActivity extends AppCompatActivity {
     private GridView catGridView;
@@ -28,17 +27,8 @@ public class CategoriaActivity extends AppCompatActivity {
         // Configurando a GridView
         catGridView = findViewById(R.id.categoryGridView);
 
-        // Criando um array de 6 posições
-        List<String> listaCat = new ArrayList<>();
-        listaCat.add("Categoria 1");
-        listaCat.add("Categoria 2");
-        listaCat.add("Categoria 3");
-        listaCat.add("Categoria 4");
-        listaCat.add("Categoria 5");
-        listaCat.add("Categoria 6");
-
         // Populando o adapter com a lista de categorias
-        AdapterCaregoria adapter = new AdapterCaregoria(listaCat);
+        AdapterCaregoria adapter = new AdapterCaregoria(listaCategorias);
         catGridView.setAdapter(adapter);
     }
 

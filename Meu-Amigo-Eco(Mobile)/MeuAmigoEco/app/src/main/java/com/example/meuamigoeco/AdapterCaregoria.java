@@ -48,6 +48,7 @@ public class AdapterCaregoria extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(parent.getContext(),SetsActivity.class);
                 intent.putExtra("CATEGORIA", catArrayList.get(position));
+                intent.putExtra("CATEGORIA_ID", position + 1);
                 parent.getContext().startActivity(intent);
             }
         });
