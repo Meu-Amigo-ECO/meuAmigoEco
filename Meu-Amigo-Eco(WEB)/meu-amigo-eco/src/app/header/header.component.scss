@@ -1,0 +1,37 @@
+*{
+  box-sizing: border-box;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#fff;
+  background-color:#16d67056;
+
+  width: 100vw;
+  height: fit-content;
+
+  padding:0 80px;
+}
+
+.brand-container{
+  font-size: 25px;
+  font-weight: 600;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:20px;
+
+  img{
+    cursor: pointer;
+    color: #3fd9879c;
+    color: #fff;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
